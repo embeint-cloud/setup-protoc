@@ -1,17 +1,16 @@
 ---
-name: define-data-property
-version: 1.1.1
+name: dunder-proto
+version: 1.0.1
 type: npm
-summary: Define a data property on an object. Will fall back to assignment in an engine
-  without descriptors.
-homepage: https://github.com/ljharb/define-data-property#readme
+summary: If available, the `Object.prototype.__proto__` accessor and mutator, call-bound
+homepage: https://github.com/es-shims/dunder-proto#readme
 license: mit
 licenses:
 - sources: LICENSE
   text: |
     MIT License
 
-    Copyright (c) 2023 Jordan Harband
+    Copyright (c) 2024 ECMAScript Shims
 
     Permission is hereby granted, free of charge, to any person obtaining a copy
     of this software and associated documentation files (the "Software"), to deal
