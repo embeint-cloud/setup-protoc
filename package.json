@@ -1,6 +1,6 @@
 {
   "name": "setup-protoc-action",
-  "version": "3.0.0",
+  "version": "4.0.0",
   "private": true,
   "description": "Setup protoc action",
   "main": "lib/main.js",
@@ -32,7 +32,7 @@
   "devDependencies": {
     "@types/jest": "^29.5.11",
     "@types/nock": "^11.1.0",
-    "@types/node": "^20.11.6",
+    "@types/node": "^24.13.3",
     "@types/semver": "^7.5.6",
     "@typescript-eslint/eslint-plugin": "^6.19.1",
     "@typescript-eslint/parser": "^6.19.1",
