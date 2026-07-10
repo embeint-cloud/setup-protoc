@@ -9,7 +9,7 @@ inputs:
     description: 'Include github pre-releases in latest version calculation'
     default: 'false'
   repo-token:
-    description: 'GitHub repo token to use to avoid rate limiter'
+    description: 'GitHub token used to authenticate requests to the GitHub API when listing protoc releases. Without it, requests are unauthenticated and subject to a much lower rate limit (60/hour per IP vs. 5000/hour). Recommended: pass the workflow GITHUB_TOKEN secret.'
     default: ''
 outputs:
   version:
