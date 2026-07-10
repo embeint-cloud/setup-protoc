@@ -2,7 +2,6 @@
 
 [![Check npm Dependencies status](https://github.com/arduino/setup-protoc/actions/workflows/check-npm-dependencies-task.yml/badge.svg)](https://github.com/arduino/setup-protoc/actions/workflows/check-npm-dependencies-task.yml)
 ![test](https://github.com/arduino/setup-protoc/workflows/test/badge.svg)
-[![Sync Labels status](https://github.com/arduino/setup-protoc/actions/workflows/sync-labels-npm.yml/badge.svg)](https://github.com/arduino/setup-protoc/actions/workflows/sync-labels-npm.yml)
 [![Check Markdown status](https://github.com/arduino/setup-protoc/actions/workflows/check-markdown-task.yml/badge.svg)](https://github.com/arduino/setup-protoc/actions/workflows/check-markdown-task.yml)
 [![Check License status](https://github.com/arduino/setup-protoc/actions/workflows/check-license.yml/badge.svg)](https://github.com/arduino/setup-protoc/actions/workflows/check-license.yml)
 [![Check Taskfiles status](https://github.com/arduino/setup-protoc/actions/workflows/check-taskfiles.yml/badge.svg)](https://github.com/arduino/setup-protoc/actions/workflows/check-taskfiles.yml)
@@ -13,6 +12,8 @@
 [![Check Packaging status](https://github.com/arduino/setup-protoc/actions/workflows/check-packaging-ncc-typescript-task.yml/badge.svg)](https://github.com/arduino/setup-protoc/actions/workflows/check-packaging-ncc-typescript-task.yml)
 
 This action makes the `protoc` compiler available to Workflows.
+
+> **Note:** This is an Embeint-maintained fork of [arduino/setup-protoc](https://github.com/arduino/setup-protoc), diverged to keep it running on current Node.js/CI tooling. It is not intended to be merged upstream, so issues and PRs should be filed against this repo rather than the original.
 
 ## Upgrade from v1 to v2 or v3
 
