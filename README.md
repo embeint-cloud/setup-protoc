@@ -56,8 +56,13 @@ To pin the exact version:
     version: "23.2"
 ```
 
-The action queries the GitHub API to fetch releases data, to avoid rate limiting,
-pass the default token with the `repo-token` variable:
+### Avoiding GitHub API rate limits
+
+This action queries the GitHub API to list `protoc` releases. Unauthenticated requests
+are limited to 60/hour per IP, which is shared by every GitHub-hosted runner and can be
+exhausted quickly, causing the action to fail with a rate limit error. Authenticated
+requests get 5,000/hour, so **always pass `repo-token`** in your workflow, using the
+automatically-provided `GITHUB_TOKEN` secret (no extra setup required):
 
 ```yaml
 - name: Install Protoc
