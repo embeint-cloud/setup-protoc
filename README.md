@@ -26,6 +26,8 @@ To get the latest stable version of `protoc` just add this step:
 ```yaml
 - name: Install Protoc
   uses: embeint-cloud/setup-protoc@v4
+  with:
+    repo-token: ${{ secrets.GITHUB_TOKEN }}
 ```
 
 If you want to pin a major or minor version you can use the `.x` wildcard:
@@ -35,6 +37,7 @@ If you want to pin a major or minor version you can use the `.x` wildcard:
   uses: embeint-cloud/setup-protoc@v4
   with:
     version: "23.x"
+    repo-token: ${{ secrets.GITHUB_TOKEN }}
 ```
 
 You can also require to include releases marked as `pre-release` in Github using the `include-pre-releases` flag (the dafault value for this flag is `false`)
@@ -45,6 +48,7 @@ You can also require to include releases marked as `pre-release` in Github using
   with:
     version: "23.x"
     include-pre-releases: true
+    repo-token: ${{ secrets.GITHUB_TOKEN }}
 ```
 
 To pin the exact version:
@@ -54,15 +58,19 @@ To pin the exact version:
   uses: embeint-cloud/setup-protoc@v4
   with:
     version: "23.2"
+    repo-token: ${{ secrets.GITHUB_TOKEN }}
 ```
 
 ### Avoiding GitHub API rate limits
 
 This action queries the GitHub API to list `protoc` releases. Unauthenticated requests
-are limited to 60/hour per IP, which is shared by every GitHub-hosted runner and can be
-exhausted quickly, causing the action to fail with a rate limit error. Authenticated
-requests get 5,000/hour, so **always pass `repo-token`** in your workflow, using the
-automatically-provided `GITHUB_TOKEN` secret (no extra setup required):
+are limited to 60/hour per public IP address. Requests from runners using the same
+public IP share this limit, which can be exhausted quickly and cause the action to fail.
+The automatically-provided `GITHUB_TOKEN` secret has a standard limit of 1,000 requests
+per hour per workflow repository, shared by workflows in that repository. Higher limits
+can apply to GitHub Enterprise Cloud resources; see
+[GitHub's rate limit documentation](https://docs.github.com/en/rest/using-the-rest-api/rate-limits-for-the-rest-api#primary-rate-limit-for-github_token-in-github-actions).
+**Always pass `repo-token`** in your workflow using this secret (no extra setup required):
 
 ```yaml
 - name: Install Protoc
